@@ -1,10 +1,10 @@
 const express = require("express");
+const { stringify } = require("nodemon/lib/utils");
 
 const app = express();
 
 app.get("/", (req, res) => {
-  const header = req.rawHeaders;
-  res.send(header);
+  res.send(req.headers);
 });
 
 app.listen("3000", () => {
