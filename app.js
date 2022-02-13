@@ -4,7 +4,7 @@ const { stringify } = require("nodemon/lib/utils");
 const app = express();
 
 app.get("/", (req, res) => {
-  res.send(req.headers);
+  res.send(req.header("user-agent"));
 });
 
 app.listen("3000", () => {
